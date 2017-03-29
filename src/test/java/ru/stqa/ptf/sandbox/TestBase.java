@@ -91,4 +91,31 @@ public class TestBase {
     protected void logOut() {
         wd.findElement(By.linkText("Logout")).click();
     }
+
+//    public void selectContact() {
+//
+//          if (!wd.findElement(By.name("selected[]")).isSelected()) {
+//               click(By.name("selected[]"));
+//             }
+//         click(By.xpath("//div[@id='content']/form[2]/div[2]/input"));
+//        }
+    protected void deletingContact() {
+       // wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+        wd.switchTo().alert().accept();
+
+    }
+
+
+
+
+    protected void goHomePage() {
+        wd.findElement(By.linkText("home")).click();
+    }
+
+    protected void selectContact() {
+        if (!wd.findElement(By.name("selected[]")).isSelected()) {
+            wd.findElement(By.name("selected[]")).click();
+        }
+        wd.findElement(By.xpath("//div[@id='content']/form[2]/div[2]/input")).click();
+    }
 }
